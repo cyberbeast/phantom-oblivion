@@ -1,4 +1,15 @@
 <md-toolbar color="primary">
-	{{title}}
+	<strong>{{ title_one | uppercase }}</strong>
+	{{ title_two | uppercase }}
 	<span class="app-toolbar-filler"></span>
 </md-toolbar>
+
+<md-tab-group>
+  <md-tab *ngFor="let tool of home_dashboard_tools">
+    <template md-tab-label><strong>{{ tool.name }}</strong></template>
+    <template md-tab-content>
+      <h1>{{ tool.description }}</h1>
+    </template>
+  </md-tab>
+</md-tab-group>
+
