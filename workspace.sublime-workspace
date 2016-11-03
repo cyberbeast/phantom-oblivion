@@ -1,0 +1,754 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Material",
+				"Material2AppAppComponent\talias"
+			],
+			[
+				"head",
+				"header\tTag"
+			],
+			[
+				"setEle",
+				"setElementStyle\tmethod"
+			],
+			[
+				"Eleme",
+				"ElementRef\talias"
+			],
+			[
+				"const",
+				"constructor\tkeyword"
+			],
+			[
+				"cons",
+				"constructor\tkeyword"
+			],
+			[
+				"candid",
+				"candidateFound"
+			],
+			[
+				"ca",
+				"candidate"
+			],
+			[
+				"bor",
+				"border-style"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"paddi",
+				"padding-bottom"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"div",
+				"div\tTag"
+			],
+			[
+				"p",
+				"p\tTag"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"tet",
+				"text-align"
+			],
+			[
+				"ps",
+				"position"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"bakgrou",
+				"background-color"
+			],
+			[
+				"retur",
+				"return_pic_value"
+			],
+			[
+				"Votes.",
+				"Votes.userID.chair"
+			],
+			[
+				"vote.cha",
+				"vote.chair"
+			],
+			[
+				"prev",
+				"prev_vote_OBJ.vice_chair"
+			],
+			[
+				"user",
+				"userID"
+			],
+			[
+				"candidate",
+				"candidateVotes"
+			],
+			[
+				"acce",
+				"access_token"
+			],
+			[
+				"sess",
+				"session."
+			],
+			[
+				"gra",
+				"graph"
+			],
+			[
+				"fb",
+				"fb_msg_post"
+			],
+			[
+				"daa",
+				"data.val"
+			],
+			[
+				"pre",
+				"prev_candidate_vote_snapshot"
+			],
+			[
+				"sna",
+				"snapshot.val"
+			],
+			[
+				"th",
+				"th\tTag"
+			],
+			[
+				"td",
+				"td\tTag"
+			],
+			[
+				"prof",
+				"prof_pic"
+			],
+			[
+				"res_",
+				"res_obj"
+			],
+			[
+				"name",
+				"namekey"
+			],
+			[
+				"re",
+				"req.user"
+			],
+			[
+				"member",
+				"member_list"
+			],
+			[
+				"res",
+				"res_g"
+			],
+			[
+				"pic",
+				"pic_url"
+			],
+			[
+				"acc",
+				"accessToken"
+			],
+			[
+				"trippy",
+				"trippy-webfont"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "server/flask_app/server.py",
+			"settings":
+			{
+				"buffer_size": 1074,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/requirements",
+			"settings":
+			{
+				"buffer_size": 3,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "me",
+		"selected_items":
+		[
+			[
+				"me",
+				"View: Toggle Menu"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"pref",
+				"Preferences: Settings"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"wor",
+				"Word Wrap: Toggle"
+			],
+			[
+				"m",
+				"View: Toggle Menu"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 382.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,sys; exec(\"if sys.version_info < (3,) or os.name != 'nt': raise OSError('This code is for Windows ST3 only!')\"); pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app"
+	],
+	"file_history":
+	[
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/run.py",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/__init__.py",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/app_utils/utilities.py",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/app_utils/token_login.py",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/app_utils/__init__.py",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/app_utils/html_codes.py",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/requirements",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/src/app/app.module.ts",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/src/app/app.component.html",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/src/app/tool.ts",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/src/styles.css",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/src/app/app.component.ts",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/src/index.html",
+		"/C/Users/Sandesh/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Sandesh/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6316/homework/hw3/parallel/collected_data_backup.csv",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6316/homework/hw3/parallel/poly_backup.csv",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6316/homework/hw3/parallel/rbf_backup.csv",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6316/homework/hw3/parallel/linear_backup.csv",
+		"/C/Users/Sandesh/Documents/angular/app/courses.component.ts",
+		"/C/Users/Sandesh/Documents/flaskapp/app/README.md",
+		"/C/Users/Sandesh/Downloads/FL.Studio.10.0.9c.Producer.Edition.Final.key/FL.Studio.10.0.9c.Producer.Edition.Final.key/ChingLiu.Notes.nfo",
+		"/C/Users/Sandesh/Documents/flaskapp/app/templates/layout.html",
+		"/C/Users/Sandesh/Documents/angular/app/app.component.ts",
+		"/C/Users/Sandesh/Documents/angular/app/auto-grow.directive.ts",
+		"/C/Users/Sandesh/Documents/angular/app/authors.component.ts",
+		"/C/Users/Sandesh/Documents/angular/app/course.service.ts",
+		"/C/Users/Sandesh/Documents/angular/app/author.service.ts",
+		"/C/Users/Sandesh/Documents/angular/app/author.service.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/timeline/css/style.css",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/css/main.css",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/js/main.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/tabs/animate.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/assets/css/main.css",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/tabs/style.css",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/views/dashboard.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/views/home.html",
+		"/C/Users/Sandesh/Downloads/jquery-tabs/jquery-tabs/index.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/tabs/jQuery.js",
+		"/C/Users/Sandesh/Downloads/vertical-timeline/index.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/views/nominate.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/config.js",
+		"/C/Users/Sandesh/Downloads/simple-confirmation-popup/index.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/textr/css/style.css",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/index.html",
+		"/C/Users/Sandesh/Downloads/animated-headline/index.html",
+		"/C/Users/Sandesh/Downloads/Compressed/html5up-phantom/index.html",
+		"/C/Users/Sandesh/Downloads/Compressed/html5up-phantom/elements.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/server.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/public/views/candidates.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/server-db-test.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/README.md",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/angular-votr/config.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/angular-votr/facebook_message_poster.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/angular-votr/server.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/angular-votr/public/views/vote.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/angular-votr/public/views/prevote.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/angular-votr/public/views/nominate.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/angular-votr/public/views/home.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/angular-votr/public/views/prevote.html.REMOTE.16176.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/angular-votr/server2.js",
+		"/C/Users/Sandesh/Documents/CSE/i.html",
+		"/C/Users/Sandesh/Downloads/Compressed/IconHoverEffects/IconHoverEffects/play.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/express-4.x-facebook-example/views/home.ejs",
+		"/C/Users/Sandesh/Downloads/Compressed/ButtonStylesInspiration/index.html",
+		"/C/Users/Sandesh/Downloads/Compressed/SelectInspiration/index.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/express-4.x-facebook-example/public/css/demo.css",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/express-4.x-facebook-example/views/home_bck.ejs",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/express-4.x-facebook-example/views/error.ejs",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/express-4.x-facebook-example/server.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/views/partials/head.hbs",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/views/layouts/single.hbs",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/views/success.hbs",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/routes/index.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/config/auth.js",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/app.js",
+		"/C/Users/Sandesh/Downloads/Compressed/NaturalLanguageForm/NaturalLanguageForm/play_nlp.html",
+		"/C/Users/Sandesh/Downloads/Compressed/MinimalForm/index.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/express-4.x-facebook-example/home.ejs",
+		"/C/Users/Sandesh/Downloads/Compressed/HoverEffectIdeas/HoverEffectIdeas/play.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/views/index.hbs",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/votr/views/auth.html",
+		"/C/Users/Sandesh/Documents/CSE/ACM/votr/configuration/config.js",
+		"/C/Users/Sandesh/Documents/CSE/Research/AstroML/datasets/POSS_1_Red_1/download_obj_data.py",
+		"/C/Users/Sandesh/AppData/Local/Temp/ieee_author_1-1.58l.json",
+		"/C/Users/Sandesh/PycharmProjects/GeneAnalysisApplication/.git/config",
+		"/C/Users/Sandesh/Documents/CSE/Research/start.bat",
+		"/C/Users/Sandesh/Downloads/cm-12.1-20160121-NIGHTLY-i777/META-INF/com/google/android/updater-script",
+		"/C/Users/Sandesh/AppData/Local/Temp/7zO187C.tmp/updater-script",
+		"/C/Users/Sandesh/AppData/Local/Temp/7zO327.tmp/updater-script",
+		"/C/Users/Sandesh/Documents/CSE/Research/cmd6.txt",
+		"/C/Users/Sandesh/Documents/CSE/Research/cmd5.txt",
+		"/C/Users/Sandesh/Documents/CSE/Research/cmd4.txt",
+		"/C/Users/Sandesh/Documents/CSE/Research/cmd3.txt",
+		"/C/Users/Sandesh/Documents/CSE/Research/cmd2.txt",
+		"/C/Users/Sandesh/Documents/CSE/Research/cmd1.txt",
+		"/C/Users/Sandesh/Documents/TripCorridor/website/index.html",
+		"/C/Users/Sandesh/Documents/TripCorridor/website/manifest.json",
+		"/C/Users/Sandesh/Downloads/Unreal.Tournament.3.Black.Edition-PROPHET/prophet.nfo",
+		"/F/PROPHET/prophet.nfo",
+		"/C/Users/Sandesh/AppData/Local/Temp/7zOCE25.tmp/Arrow.S03E22.720p.HDTV.X264-DIMENSION-rum.srt",
+		"/C/Users/Sandesh/AppData/Local/Temp/7zO404.tmp/arrow.al.sah.him.(6425092).nfo",
+		"/C/Users/Sandesh/Documents/TripCorridor/Website/Design/index.html",
+		"/C/Users/Sandesh/Documents/TripCorridor/Website/Design/assets/css/main.css",
+		"/C/Users/Sandesh/Documents/TripCorridor/Website/Design/manifest.json",
+		"/C/Users/Sandesh/Downloads/Vandiana/stylesheet.css",
+		"/C/Users/Sandesh/Documents/TripCorridor/Website/Design/assets/css/stylesheet.css",
+		"/C/Users/Sandesh/Downloads/Webbb/trippy-demo.html",
+		"/C/Users/Sandesh/Downloads/scatter3d_demo.py",
+		"/C/Users/Sandesh/AppData/Local/Temp/bellman_ford.py",
+		"/C/Users/Sandesh/Documents/CSE/Research/master-repo/acm_paper_backup.tex",
+		"/C/Users/Sandesh/Downloads/science.bib",
+		"/C/Users/Sandesh/AppData/Local/Temp/lines3d_demo.py",
+		"/C/Users/Sandesh/Documents/CSE/Final Year Project/Data/hs_alt_CHM1_1.1_chr1.fa",
+		"/C/Users/Sandesh/Downloads/Native.Instruments.TRAKTOR.2.v2.9.0.x86.x64.FiXED-CHAOS/AvaxHome.nfo",
+		"/C/Users/Sandesh/AppData/Roaming/Mozilla/Firefox/Profiles/w3bqsly4.default-1411050206135/sessionCheckpoints.json",
+		"/C/Users/Sandesh/Downloads/Native.Instruments.TRAKTOR.2.v2.9.0.x86.x64.FiXED-CHAOS/CHAOS.nfo",
+		"/C/Users/Sandesh/Downloads/[Must Have] Image-Line FL.Studio 12.1.2 Signature Bundle-r4e [deepstatus]/r4e.nfo",
+		"/C/Users/Sandesh/Downloads/hs_alt_CHM1_1.1_chr1.agp/hs_alt_CHM1_1.1_chr1.agp",
+		"/C/Users/Sandesh/Documents/CSE/Final Year Project/Chromosomes/CHR_17/hs_ref_GRCh38_chr17.fa/hs_ref_GRCh38_chr17.fa",
+		"/C/Users/Sandesh/PycharmProjects/GeneAnalysisApplication/task_dispatcher.py~",
+		"/C/Users/Sandesh/PycharmProjects/GeneAnalysisApplication/Distributed.py",
+		"/C/Users/Sandesh/PycharmProjects/GeneAnalysisApplication/Analysis.py",
+		"/C/Users/Sandesh/PycharmProjects/GeneAnalysisApplication/input_smallest.txt",
+		"/C/Users/Sandesh/Documents/Neo4j/default.graphdb/neo4j.properties",
+		"/C/Users/Sandesh/Documents/CSE/VIII Sem/Final Year Project/Chromosomes/CHR_01/hs_ref_GRCh38_chr1.fa/hs_ref_GRCh38_chr1.fa",
+		"/J/TV Series/Gotham/Season 1/Gotham S01E10.srt",
+		"/C/Users/Sandesh/Downloads/vlc___slim_beam___black_skin_by_kryptonsyt-d78aq1w/Slim_Beam_Black-krypton.vlt"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"return",
+			"E4",
+			"border",
+			"color",
+			"logo",
+			"<",
+			">\n",
+			"header",
+			"-->\n",
+			"title",
+			"cd-intro",
+			"cd.intro",
+			"#footer {\n\t\t\t\tpadding:",
+			"section",
+			"FOOTER",
+			"cd",
+			"em",
+			"jquery",
+			"head",
+			"/>\n",
+			"image",
+			"style",
+			"candidate",
+			"main",
+			"/user/pi",
+			"pic",
+			"profile",
+			"pic",
+			"button",
+			"low",
+			"Votes",
+			"vote",
+			"config",
+			"conf",
+			"sessio",
+			"sessions",
+			"access",
+			"message",
+			"setAcc",
+			"graph.get",
+			"permiss",
+			"access",
+			"c.ACC",
+			"pic",
+			"user",
+			"index",
+			".on(",
+			"nomineesRef",
+			"blueprint",
+			"bp",
+			"\t\t\t\t<",
+			"h1",
+			"pad",
+			"bp-header__present",
+			"login",
+			"home",
+			"page-docu",
+			"page-manuals",
+			"passport",
+			"index",
+			"routes",
+			"research@pes.edu",
+			"#",
+			"TripCorr",
+			"banner",
+			">gi",
+			"CACC",
+			"marius",
+			"\"group\":2",
+			"TAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAAC\nCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCAACCCTAACCCTAACCCTAACCCTAACCCTAA\nCCCTAACCCCTAACCCTAACCCTAACCCTAACCCTAACCTAACCCTAACCCTAACCCTAACCCTAACCCT\nAACCCTAACCCTAACCCTAACCCCTAACCCTAACCCTAAACCCTAAACCCTAACCCTAACCCTAACCCTA\nACCCTAACCCCAACCCCAACCCCAACCCCAACCCCAACCCCAACCCTAACCCCTAACCCTAACCCTAACC\nCTACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCCTAACCCCTAACCCTAACCCTAACCCTA\nACCCTAACCCTAACCCTAACCCCTAACCCTAACCCTAACCCTAACCCTCGCGGTACCCTCAGCCGGCCCG\nCCCGCCCGGGTCTGACCTGAGGAGAACTGTGCTCCGCCTTCAGAGTACCACCGAAATCTGTGCAGAGGAC\nAACGCAGCTCCGCCCTCGCGGTGCTCTCCGGGTCTGTGCTGAGGAGAACGCAACTCCGCCGTTGCAAAGG\nCGCGCCGCGCCGGCGCAGGCGCAGAGAGGCGCGCCGCGCCGGCGCAGGCGCAGAGAGGCGCGCCGCGCCG\nGCGCAGGCGCAGAGAGGCGCGCCGCGCCGGCGCAGGCGCAGAGAGGCGCGCCGCGCCGGCGCAGGCGCAG\nAGAGGCGCGCCGCGCCGGCGCAGGCGCAGACACATGCTAGCGCGTCGGGGTGGAGGCGTGGCGCAGGCGC\nAGAGAGGCGCGCCGCGCCGGCGCAGGCGCAGAGACACATGCTACCGCGTCCAGGGGTGGAGGCGTGGCGC\nAGGCGCAGAGAGGCGCACCGCGCCGGCGCAGGCGCAGAGACACATGCTAGCGCGTCCAGGGGTGGAGGCG\nTGGCGCAGGCGCAGAGACGCAAGCCTACGGGCGGGGGTTGGGGGGGCGTGTGTTGCAGGAGCAAAGTCGC\nACGGCGCCGGGCTGGGGCGGGGGGAGGGTGGCGCCGTGCACGCGCAGAAACTCACGTCACGGTGGCGCGG\nCGCAGAGACGGGTAGAACCTCAGTAATCCGAAAAGCCGGGATCGACCGCCCCTTGCTTGCAGCCGGGCAC\nTACAGGACCCGCTTGCTCACGGTGCTGTGCCAGGGCGCCCCCTGCTGGCGACTAGGGCAACTGCAGGGCT\nCTCTTGCTTAGAGTGGTGGCCAGCGCCCCCTGCTGGCGCCGGGGCACTGCAGGGCCCTCTTGCTTACTGT\nATAGTGGTGGCACGCCGCCTGCTGGCAGCTAGGGACATTGCAGGGTCCTCTTGCTCAAGGTGTAGTGGCA",
+			"genomic scaffold, GRCh38 Primary Assembly HSCHR1_CTG1_1",
+			"GATTCATGGCTGAAATCGTGTTTGACCAGCTATGTGTGTCTCTCAATCCGATCAAGTAGATGTCTAAAAT\nTAACCGTCAGAATATTTATGCCTGATTCATGGCTGAAATTGTGTTTGACCAGCTATGTGTGTCTCTTAAT\nCCACTCAAGTAGATGTCTAAAATTAACCATCAGAATATTTATGCCTGATTCATGGCTGAAATCACGTTTG\nACCAGCTATGTGTGTCTCTTAATCCAGTCAAGTAGATGTCTAAAATTAACCATCAGAATATTTATGCCTG\nATTCATGGCTGAAATCGTGTTTGACCAGCTATGTGTGTCTCTCAATCCGATCAAGTAGATGTCTGAAATT\nAACCATCAGAATATTTATGCCTGATTCATGGCTGAAATTTCAGGATGAAAGCTATGAAATCTCTATTTGT\nGTTTGTGTATCTATTAATGTATGTTATGTATATGTGATATTTTCTTAACTCCAGAGAGCATTGCAAAATT\nCATTTATGAAAACCTCTAAAAGTGCTCTATTCTAACTTGGCTTGGAAAAAAATAAGCATTTATAAATAAA\nTATTCACCAAACTCCTAGAAATATAGGAACTGATCAAATGTTTCTTAAGTTAACATGATTTGGATAAAAC\nTTAGTTAAATAAGATTAATATAGTATTTTTGGTGTAATAAAACAACTATATCTTCAAAATTATCATTATT\nGAATATAAAACAAGCATAAATTCCTATTCTGCTTGAGTTCTAGTCAAATAAGCTAATATTATACTTACTA\nGAAACGTAAAATCTTAAAGCTTATAGATTTGATTCTAATTAAGTTGTCATTCTTATGAAAAACATTATTT\nTTTTTATGCTGAAAAGATACACATATATTTAGAGTTAGCCAGCTGGACTCAGTTTAGGTGATCCCAATTT\nTGTTACAACATCGAAAGCATCATAATCAGGAGCAAGTCGAACATATGCCTTCTCTTTATCAGGACAAATC\nAGGGTGGTGACCTTGGCCACATCACTGTCATAGAGCTTCTTCACAGCCTGTCTGATCTGGTGCTTGTTGG\nCTTTAACATCCACAGTGAACACAAGCGTGTTGTTTTCTTCTATCTTCTTCACGGCGATTCATGGCTGAAATCGTGTTTGACCAGCTATGTGTGTCTCTCAATCCGATCAAGTAGATGTCTAAAAT\nTAACCGTCAGAATATTTATGCCTGATTCATGGCTGAAATTGTGTTTGACCAGCTATGTGTGTCTCTTAAT\nCCACTCAAGTAGATGTCTAAAATTAACCATCAGAATATTTATGCCTGATTCATGGCTGAAATCACGTTTG\nACCAGCTATGTGTGTCTCTTAATCCAGTCAAGTAGATGTCTAAAATTAACCATCAGAATATTTATGCCTG\nATTCATGGCTGAAATCGTGTTTGACCAGCTATGTGTGTCTCTCAATCCGATCAAGTAGATGTCTGAAATT\nAACCATCAGAATATTTATGCCTGATTCATGGCTGAAATTTCAGGATGAAAGCTATGAAATCTCTATTTGT\nGTTTGTGTATCTATTAATGTATGTTATGTATATGTGATATTTTCTTAACTCCAGAGAGCATTGCAAAATT\nCATTTATGAAAACCTCTAAAAGTGCTCTATTCTAACTTGGCTTGGAAAAAAATAAGCATTTATAAATAAA\nTATTCACCAAACTCCTAGAAATATAGGAACTGATCAAATGTTTCTTAAGTTAACATGATTTGGATAAAAC\nTTAGTTAAATAAGATTAATATAGTATTTTTGGTGTAATAAAACAACTATATCTTCAAAATTATCATTATT\nGAATATAAAACAAGCATAAATTCCTATTCTGCTTGAGTTCTAGTCAAATAAGCTAATATTATACTTACTA\nGAAACGTAAAATCTTAAAGCTTATAGATTTGATTCTAATTAAGTTGTCATTCTTATGAAAAACATTATTT\nTTTTTATGCTGAAAAGATACACATATATTTAGAGTTAGCCAGCTGGACTCAGTTTAGGTGATCCCAATTT\nTGTTACAACATCGAAAGCATCATAATCAGGAGCAAGTCGAACATATGCCTTCTCTTTATCAGGACAAATC\nAGGGTGGTGACCTTGGCCACATCACTGTCATAGAGCTTCTTCACAGCCTGTCTGATCTGGTGCTTGTTGG\nCTTTAACATCCACAGTGAACACAAGCGTGTTGTTTTCTTCTATCTTCTTCACGGCCGACTCAGTGGTCAGCGACTCAGTGGTCAG",
+			"sendMessageToUser",
+			"TAACCCTAAC\nCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTA\nACCCTAACCCTAACCCTAACCCTAACCCAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCC\nTAACCCTAACCCTAAACCCTAAACCCTAACCCTAACCCTAACCCTAACCCTAACCCCAACCCCAACCCCA\nACCCCAACCCCAACCCCAACCCTAACCCCTAACCCTAACCCTAACCCTACCCTAACCCTAACCCTAACCC\nTAACCCTAACCCTAACCCCTAACCCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCCT\nAACCCTAACCCTAACCCTAACCCTCGCGGTACCCTCAGCCGGCCCGCCCGCCCGGGTCTGACCTGAGGAG\nAACTGTGCTCCGCCTTCAGAGTACCACCGAAATCTGTGCAGAGGACAACGCAGCTCCGCCCTCGCGGTGC",
+			"den",
+			"emp",
+			"leap",
+			"Three",
+			"beaut",
+			"beauty",
+			"13",
+			"Scene2",
+			"18",
+			"supriya",
+			"idle",
+			"displa",
+			"g_hWindow",
+			"?>",
+			"jade",
+			"\"depend",
+			"\"name\"",
+			"name",
+			"intro.jpg",
+			"addnotification",
+			"add-notification",
+			"onload",
+			"notification",
+			"you are ",
+			"error",
+			"Firefox",
+			"App",
+			"boiler",
+			"app-heading",
+			"firefox"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"page-profile",
+			"page-vote",
+			"scibase@pes.edu"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "C:\\Users\\Sandesh\\Documents\\Graduate Courses\\Fall 2016\\CS 6501 007\\project\\phantom-oblivion"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "server/flask_app/server.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1074,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								462,
+								462
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "server/requirements",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3,
+								3
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 63.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"courses.",
+				"app\\courses.component.ts"
+			],
+			[
+				"service.ts",
+				"app\\course.service.ts"
+			],
+			[
+				"courses.co",
+				"app\\courses.component.ts"
+			],
+			[
+				"app.com",
+				"app\\app.component.ts"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 207.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
