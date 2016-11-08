@@ -5,18 +5,32 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
-
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterModule } from '@angular/router';
+import { DashComponentsService } from './dashboard/dash-components.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    RouterModule.forRoot([
+      {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      },
+      {
+        path:'dashboard',
+        component: DashboardComponent
+      }
+    ])
   ],
-  providers: [],
+  providers: [DashComponentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

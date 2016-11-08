@@ -1,0 +1,9 @@
+<pre>hekkow</pre>
+<md-tab-group>
+  <md-tab *ngFor="let tab of home_dashboard_tabs">
+    <template md-tab-label><strong>{{ tab.name }}</strong></template>
+    <template md-tab-content>
+      <h1>{{ tab.description }}</h1>
+    </template>
+  </md-tab>
+</md-tab-group>

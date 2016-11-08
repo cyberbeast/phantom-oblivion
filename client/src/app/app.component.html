@@ -4,12 +4,6 @@
 	<!-- <span class="app-toolbar-filler">something</span> -->
 </md-toolbar>
 
-<md-tab-group>
-  <md-tab *ngFor="let tool of home_dashboard_tools">
-    <template md-tab-label><strong>{{ tool.name }}</strong></template>
-    <template md-tab-content>
-      <h1>{{ tool.description }}</h1>
-    </template>
-  </md-tab>
-</md-tab-group>
-
+<!-- <a routerLink="/dashboard">Dashboard</a> -->
+   <router-outlet></router-outlet>
+<!-- <app-dashboard></app-dashboard> -->
