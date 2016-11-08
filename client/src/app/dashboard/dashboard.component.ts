@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tab } from './tab';
 import { DashComponentsService } from './dash-components.service';
-// import { HTTP_PROVIDERS } from '@angular/http';
 
 @Component({
   selector: 'app-dashboard',
