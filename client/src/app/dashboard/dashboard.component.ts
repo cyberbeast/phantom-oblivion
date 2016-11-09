@@ -11,12 +11,14 @@ import { DashComponentsService } from './dash-components.service';
 export class DashboardComponent implements OnInit {
   // Initialize variables
   private home_dashboard_tabs: Tab[];
+  private firstrun: boolean = true;
 
   constructor(private dashService: DashComponentsService) {
 
   }
 
   ngOnInit() {
+
     this.dashService.getTabs().subscribe(tabs => {
   		this.home_dashboard_tabs = tabs;
   		// console.log("Received tabs...");

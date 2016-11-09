@@ -8,6 +8,7 @@ import { MaterialModule } from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { DashComponentsService } from './dashboard/dash-components.service';
+
 @NgModule({
   declarations: [
     AppComponent,
