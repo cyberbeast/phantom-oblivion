@@ -55,24 +55,30 @@
 </md-tab-group>
 
 <div *ngIf="firstrun === true">
-	<md-grid-list cols="3">
-		<md-grid-tile></md-grid-tile>
-		<md-grid-tile><md-card>
-			<md-card-subtitle>GET STARTED</md-card-subtitle>
-			<md-card-title>Welcome</md-card-title>   
-			<md-card-content>
-				<p>Looks like this is the first time you are configuring your anonymous web services project</p>
-				<p>Enter the required information to get started with a new project</p>
-				<md-card>
-					<md-input placeholder="PROJECT NAME" dividerColor="primary" style="width: 100%;" #newProject (keyup.enter)="addProject(newProject.value)"></md-input>
-				</md-card>
-				<ul><li *ngFor='let project of projects'>{{project}}</li></ul>
-			</md-card-content>
-			<md-card-actions>
-				<button md-button>CREATE</button>
-				<button md-button>HELP</button>
-			</md-card-actions>
-		</md-card></md-grid-tile>
-		<md-grid-tile></md-grid-tile>
-	</md-grid-list>
-</div>
+	<div class="container">
+	<div class="row"></div>
+	<div class="row"></div>
+	<div class="row"></div> 
+	<div class="row"></div>
+
+		<div class="row">
+			<div class="col s4 m6 offset-l3">
+				<div class="card deep-purple">
+					<div class="card-content white-text">
+						<span class="card-title">GET STARTED</span>
+						<p>Looks like this is the first time you are configuring your anonymous web services project.
+							Enter the required information to get started with a new project.</p>
+							<br />
+							<form class="col s12 white-text">
+								<div class="input-field col s12">
+									<input id="new_project" type="text" class="validate" #newProject (keyup.enter)="addProject(newProject.value)">
+									<label for="new_project">PROJECT NAME</label>
+								</div>
+							</form>
+							<p class="deep-purple-text"><br />Thats it! </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
