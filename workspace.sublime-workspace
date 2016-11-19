@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"Ace",
+				"AceEditorDirective\talias"
+			],
+			[
+				"web",
+				"web_services_api"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"get",
+				"getTabs\tmethod"
+			],
+			[
+				"vm_",
+				"vm_management_api"
+			],
+			[
+				"config",
+				"config_api"
+			],
+			[
 				"Material",
 				"Material2AppAppComponent\talias"
 			],
@@ -196,21 +220,122 @@
 	"buffers":
 	[
 		{
-			"file": "server/flask_app/server.py",
+			"file": "client/src/app/dashboard/dashboard.component.html",
 			"settings":
 			{
-				"buffer_size": 1074,
+				"buffer_size": 2716,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/src/app/dashboard/dashboard.component.css",
+			"settings":
+			{
+				"buffer_size": 333,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "server/requirements",
+			"file": "client/src/app/app.module.ts",
 			"settings":
 			{
-				"buffer_size": 3,
+				"buffer_size": 1124,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/src/index.html",
+			"settings":
+			{
+				"buffer_size": 533,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/run.py",
+			"settings":
+			{
+				"buffer_size": 608,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/hug_app/config_api.py",
+			"settings":
+			{
+				"buffer_size": 1119,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/hug_app/vm_management_api.py",
+			"settings":
+			{
+				"buffer_size": 83,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/hug_app/web_services_api.py",
+			"settings":
+			{
+				"buffer_size": 82,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/src/app/app.component.html",
+			"settings":
+			{
+				"buffer_size": 704,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/src/app/dashboard/tab.ts",
+			"settings":
+			{
+				"buffer_size": 77,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/src/app/dashboard/mock-tabs.ts",
+			"settings":
+			{
+				"buffer_size": 280,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/src/app/dashboard/project-interface.ts",
+			"settings":
+			{
+				"buffer_size": 96,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "import { Component, OnInit, ViewChild } from '@angular/core';\nimport { Tab } from './tab';\nimport { DashComponentsService } from './dash-components.service';\nimport \"brace\";\nimport \"brace/mode/python\";\nimport \"brace/theme/eclipse\";\n\n@Component({\n  selector: 'app-dashboard',\n  templateUrl: './dashboard.component.html',\n  styleUrls: ['./dashboard.component.css'],\n  providers:[DashComponentsService]\n})\nexport class DashboardComponent implements OnInit {\n  // Initialize variables\n  private home_dashboard_tabs: Tab[];\n  private firstrun: boolean;\n  private current_project: string;\n\n  private code: [number, string];\n  var code_group: code[];\n\n \n  \n  text:string = \"#This is a code editor! \";\n  options:any = {maxLines: 1000, printMargin: false, highlightActiveLine: true};\n\n  function_cards = [1];\n\n  onChange(code) {\n    console.log(\"new code\", code);\n    this.text = code;\n  }\n\n  addNewFunction() {\n  \tthis.function_cards.push(1);\n  }\n\n  constructor(private dashService: DashComponentsService) {\n  \t\n  }\n\n  ngOnInit() {\n  \tthis.dashService.getFirstRunStatus().subscribe(\n  \t\t\tstatus => {\n  \t\t\t\tthis.firstrun = status;\n  \t\t\t\tconsole.log(\"Received first run status...\");\n  \t\t\t});\n\n    this.dashService.getTabs().subscribe(tabs => {\n  \t\tthis.home_dashboard_tabs = tabs;\n  \t\t// console.log(\"Received tabs...\");\n  \t});\n  }\n\n  addProject(value: string) {  \n  \tif (value) {\n  \t\tvar project = {value}\n  \t\tthis.dashService.addProjects(project).subscribe(\n  \t\t\tmsg => {\n  \t\t\t\tthis.current_project = msg.name;\n  \t\t\t})\n  \t}\n  }\n}\n",
+			"file": "client/src/app/dashboard/dashboard.component.ts",
+			"file_size": 1519,
+			"file_write_time": 131239758506447006,
+			"settings":
+			{
+				"buffer_size": 1522,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -221,10 +346,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 354.0,
-		"last_filter": "me",
+		"height": 137.0,
+		"last_filter": "word",
 		"selected_items":
 		[
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wor",
+				"Word Wrap: Toggle"
+			],
 			[
 				"me",
 				"View: Toggle Menu"
@@ -232,10 +365,6 @@
 			[
 				"men",
 				"View: Toggle Menu"
-			],
-			[
-				"word",
-				"Word Wrap: Toggle"
 			],
 			[
 				"pref",
@@ -260,10 +389,6 @@
 			[
 				"pack",
 				"Package Control: Install Package"
-			],
-			[
-				"wor",
-				"Word Wrap: Toggle"
 			],
 			[
 				"m",
@@ -301,18 +426,45 @@
 	"expanded_folders":
 	[
 		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion",
-		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server",
-		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app"
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules/ace-builds",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules/ace-builds/src-min",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules/arrify"
 	],
 	"file_history":
 	[
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/angular-cli.json",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/app.component.ts",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/dashboard/dashboard.component.ts",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/dashboard/dashboard.component.html",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/dashboard/dash-components.service.ts",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/dashboard/dashboard.component.css",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/app.component.html",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules/@angular/material/core/theming/prebuilt/pink-bluegrey.css",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/styles.css",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules/@angular/material/core/theming/_palette.scss",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules/@angular/material/core/theming/_theming.scss",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules/@angular/material/core/theming/_all-theme.scss",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules/webpack-dev-server/client/style.css",
+		"/C/Users/Sandesh/Downloads/MaterialDesign-Webfont-master/package.json",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/app.module.ts",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules/babel-runtime/helpers/asyncGenerator.js",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/firstview/firstview.component.html",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/firstview/firstview.component.ts",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/app.component.scss",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/.gitignore",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/index.html",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/src/app/dashboard/mock-tabs.ts",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/client/node_modules/npm/lib/root.js",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/server.py",
+		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/requirements",
 		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/run.py",
 		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/__init__.py",
 		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/app_utils/utilities.py",
 		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/app_utils/token_login.py",
 		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/app_utils/__init__.py",
 		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/flask_app/app_utils/html_codes.py",
-		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/server/requirements",
 		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/src/app/app.module.ts",
 		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/src/app/app.component.html",
 		"/C/Users/Sandesh/Documents/Graduate Courses/Fall 2016/CS 6501 007/project/phantom-oblivion/src/app/tool.ts",
@@ -409,35 +561,11 @@
 		"/C/Users/Sandesh/AppData/Local/Temp/7zOCE25.tmp/Arrow.S03E22.720p.HDTV.X264-DIMENSION-rum.srt",
 		"/C/Users/Sandesh/AppData/Local/Temp/7zO404.tmp/arrow.al.sah.him.(6425092).nfo",
 		"/C/Users/Sandesh/Documents/TripCorridor/Website/Design/index.html",
-		"/C/Users/Sandesh/Documents/TripCorridor/Website/Design/assets/css/main.css",
-		"/C/Users/Sandesh/Documents/TripCorridor/Website/Design/manifest.json",
-		"/C/Users/Sandesh/Downloads/Vandiana/stylesheet.css",
-		"/C/Users/Sandesh/Documents/TripCorridor/Website/Design/assets/css/stylesheet.css",
-		"/C/Users/Sandesh/Downloads/Webbb/trippy-demo.html",
-		"/C/Users/Sandesh/Downloads/scatter3d_demo.py",
-		"/C/Users/Sandesh/AppData/Local/Temp/bellman_ford.py",
-		"/C/Users/Sandesh/Documents/CSE/Research/master-repo/acm_paper_backup.tex",
-		"/C/Users/Sandesh/Downloads/science.bib",
-		"/C/Users/Sandesh/AppData/Local/Temp/lines3d_demo.py",
-		"/C/Users/Sandesh/Documents/CSE/Final Year Project/Data/hs_alt_CHM1_1.1_chr1.fa",
-		"/C/Users/Sandesh/Downloads/Native.Instruments.TRAKTOR.2.v2.9.0.x86.x64.FiXED-CHAOS/AvaxHome.nfo",
-		"/C/Users/Sandesh/AppData/Roaming/Mozilla/Firefox/Profiles/w3bqsly4.default-1411050206135/sessionCheckpoints.json",
-		"/C/Users/Sandesh/Downloads/Native.Instruments.TRAKTOR.2.v2.9.0.x86.x64.FiXED-CHAOS/CHAOS.nfo",
-		"/C/Users/Sandesh/Downloads/[Must Have] Image-Line FL.Studio 12.1.2 Signature Bundle-r4e [deepstatus]/r4e.nfo",
-		"/C/Users/Sandesh/Downloads/hs_alt_CHM1_1.1_chr1.agp/hs_alt_CHM1_1.1_chr1.agp",
-		"/C/Users/Sandesh/Documents/CSE/Final Year Project/Chromosomes/CHR_17/hs_ref_GRCh38_chr17.fa/hs_ref_GRCh38_chr17.fa",
-		"/C/Users/Sandesh/PycharmProjects/GeneAnalysisApplication/task_dispatcher.py~",
-		"/C/Users/Sandesh/PycharmProjects/GeneAnalysisApplication/Distributed.py",
-		"/C/Users/Sandesh/PycharmProjects/GeneAnalysisApplication/Analysis.py",
-		"/C/Users/Sandesh/PycharmProjects/GeneAnalysisApplication/input_smallest.txt",
-		"/C/Users/Sandesh/Documents/Neo4j/default.graphdb/neo4j.properties",
-		"/C/Users/Sandesh/Documents/CSE/VIII Sem/Final Year Project/Chromosomes/CHR_01/hs_ref_GRCh38_chr1.fa/hs_ref_GRCh38_chr1.fa",
-		"/J/TV Series/Gotham/Season 1/Gotham S01E10.srt",
-		"/C/Users/Sandesh/Downloads/vlc___slim_beam___black_skin_by_kryptonsyt-d78aq1w/Slim_Beam_Black-krypton.vlt"
+		"/C/Users/Sandesh/Documents/TripCorridor/Website/Design/assets/css/main.css"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 58.0
 	},
 	"find_in_files":
 	{
@@ -451,6 +579,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"';\n",
 			"return",
 			"E4",
 			"border",
@@ -562,6 +691,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			" \"",
 			"page-profile",
 			"page-vote",
 			"scibase@pes.edu"
@@ -581,34 +711,39 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "server/flask_app/server.py",
+					"file": "client/src/app/dashboard/dashboard.component.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1074,
+						"buffer_size": 2716,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								462,
-								462
+								913,
+								913
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"word_wrap": true
+							"history_list_is_closing": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 399.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -616,27 +751,489 @@
 				},
 				{
 					"buffer": 1,
-					"file": "server/requirements",
+					"file": "client/src/app/dashboard/dashboard.component.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3,
+						"buffer_size": 333,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3,
-								3
+								333,
+								333
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "client/src/app/app.module.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								713,
+								713
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 2,
+								"tabSize": 2
+							},
+							"use_tab_stops": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "client/src/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 533,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								533,
+								533
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "server/run.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 608,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								399,
+								399
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 119.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "server/hug_app/config_api.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								479,
+								479
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 111.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "server/hug_app/vm_management_api.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 83,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								83
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "server/hug_app/web_services_api.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 82,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 8,
+					"file": "client/src/app/app.component.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								660,
+								660
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "client/src/app/dashboard/tab.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 77,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "client/src/app/dashboard/mock-tabs.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 280,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								280
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "client/src/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 533,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								533,
+								533
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 8,
+					"file": "client/src/app/app.component.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								615,
+								615
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 223.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 11,
+					"file": "client/src/app/dashboard/project-interface.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 96,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								28,
+								28
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 12,
+					"file": "client/src/app/dashboard/dashboard.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								646,
+								646
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 98.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -647,7 +1244,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 48.0
 	},
 	"input":
 	{
@@ -661,17 +1258,52 @@
 				0,
 				0,
 				1,
+				3
+			],
+			[
+				1,
+				0,
+				3,
 				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			],
+			[
+				1,
+				2,
+				3,
+				4
+			],
+			[
+				2,
+				1,
+				3,
+				2
+			],
+			[
+				0,
+				3,
+				1,
+				4
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.469890171387,
+			0.734945085694,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.516150740242,
+			0.708277254374,
+			0.342530282638,
 			1.0
 		]
 	},
@@ -692,7 +1324,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 48.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -701,6 +1333,78 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"dashboard",
+				"client\\src\\app\\dashboard\\dashboard.component.css"
+			],
+			[
+				"app",
+				"client\\src\\app\\app.component.ts"
+			],
+			[
+				"dashboar",
+				"client\\src\\app\\dashboard\\dashboard.component.html"
+			],
+			[
+				"angular",
+				"client\\angular-cli.json"
+			],
+			[
+				"index",
+				"client\\src\\index.html"
+			],
+			[
+				"",
+				"client\\src\\app\\app.module.ts"
+			],
+			[
+				"app.modu",
+				"client\\src\\app\\app.module.ts"
+			],
+			[
+				"app.compo",
+				"client\\src\\app\\app.component.html"
+			],
+			[
+				"style",
+				"client\\src\\styles.css"
+			],
+			[
+				"style.css",
+				"client\\node_modules\\webpack-dev-server\\client\\style.css"
+			],
+			[
+				"app.mod",
+				"client\\src\\app\\app.module.ts"
+			],
+			[
+				"dash",
+				"client\\src\\app\\dashboard\\dashboard.component.html"
+			],
+			[
+				"das",
+				"client\\src\\app\\dashboard\\dashboard.component.ts"
+			],
+			[
+				"dashcompo",
+				"client\\src\\app\\dashboard\\dash-components.service.ts"
+			],
+			[
+				"dashboad",
+				"client\\src\\app\\dashboard\\dashboard.component.html"
+			],
+			[
+				"firstview",
+				"client\\src\\app\\firstview\\firstview.component.ts"
+			],
+			[
+				"ap.modu",
+				"client\\src\\app\\app.module.ts"
+			],
+			[
+				"app.component.h",
+				"client\\src\\app\\app.component.html"
+			],
 			[
 				"courses.",
 				"app\\courses.component.ts"
@@ -738,15 +1442,15 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 5,
 	"settings":
 	{
 	},
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 207.0,
+	"side_bar_visible": false,
+	"side_bar_width": 226.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

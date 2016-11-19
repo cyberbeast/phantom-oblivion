@@ -1,14 +1,20 @@
-<md-toolbar color="primary">
-	<strong>{{ title_one | uppercase }}</strong>
-	{{ title_two | uppercase }}
-	<!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
+  <nav>
+    <div class="nav-wrapper deep-purple" >
+      <!-- <a href="#" class="brand-logo">Logo</a> -->
+      <div style="padding-left: 20px;">
+      	<span style="font-size: 180%;">
+      		<span style="font-weight: bold;">{{ title_one | uppercase }}</span><span style="font-weight: lighter;">{{ title_two | uppercase }}</span>
 
-  <span>
-  	<button md-raised-button color="white"><span style="color: black;">GITHUB</span></button>
-  </span>
-</md-toolbar>
+      	</span>
+      </div>
+    </div>
+  </nav>
+
+
+
 
 <!-- <a routerLink="/dashboard">Dashboard</a> -->
-   <router-outlet style="background: #E8EAF6"></router-outlet>
+
+<router-outlet></router-outlet>
+
 <!-- <app-dashboard></app-dashboard> -->

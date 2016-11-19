@@ -1,7 +1,7 @@
 """Entry point for backend application"""
 
 import hug
-from hug_app import config_api, vm_management_api
+from hug_app import config_api, vm_management_api, web_services_api
 import json
 
 @hug.not_found()
@@ -20,3 +20,7 @@ def config_api():
 @hug.extend_api('/vm')
 def vm_api():
 	return [vm_management_api]
+
+@hug.extend_api('/webservices')
+def vm_api():
+	return [web_services_api]

@@ -8,11 +8,17 @@ import { MaterialModule } from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { DashComponentsService } from './dashboard/dash-components.service';
+import { AceEditorComponent } from 'ng2-ace-editor';
+import { AceEditorDirective } from 'ng2-ace-editor';
+import { MaterializeModule } from 'angular2-materialize';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    AceEditorComponent,
+    AceEditorDirective
   ],
   imports: [
     BrowserModule,
