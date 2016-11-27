@@ -1,6 +1,19 @@
 import hug
 import os
+from pymongo import *
 import json
+from bson.objectid import ObjectId
+from bson import BSON
+from bson import json_util
+import os
+import shutil
+
+client = MongoClient()
+functions_db = client.functions_db
+functions = functions_db.functions
+
+servers_db = client.servers_db
+servers = servers_db.servers
 
 def cors_support(response, *args, **kwargs):
     response.set_header('Access-Control-Allow-Origin', '*')
@@ -13,9 +26,10 @@ def trial():
 @hug.get('/first_run_status', requires=cors_support)
 def first_run_status():
 	if not os.path.exists('projects'):
-		return True
+		return str(1)
 	else:
-		return False
+		print(os.listdir('projects')[0])
+		return os.listdir('projects')[0]
 
 
 @hug.get('/get_tabs', requires=cors_support)
@@ -26,7 +40,23 @@ def get_tabs():
 def new_project(body):
 	# print("GOT {}: {}".format(type(body), repr(body)))
 	content = json.loads(body)
-	print(content['value'])
-	if not os.path.exists('projects/' + content['value']):
-		os.makedirs('projects/' + content['value'])
-	return {'id':1, 'name':'success yo', 'description':'success_desc yo', 'status':'success_status yo'}
+	# print(content['value'])
+	if not os.path.exists('projects' + os.sep + content['value']):
+		os.makedirs('projects' + os.sep + content['value'])
+
+	insert_Function_object = {
+		"function_name" : " ",
+		"function_description" : " ",
+		"function_code" : " ",
+		"request_method" : "GET"
+	}
+	inserted_Function_id_res = functions.insert_one(insert_Function_object).inserted_id
+
+	insert_Server_object = {
+		"server_host" : " ",
+		"server_username" : " ",
+		"server_password" : " "
+	}
+	inserted_Server_id_res = functions.insert_one(insert_Server_object).inserted_id
+
+	return {'name':content['value']}
