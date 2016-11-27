@@ -3,3 +3,8 @@
   // Every toolbar row uses a flexbox row layout.
   flex: 1 1 auto;
 }
+
+.switch label input[type=checkbox]:checked + .lever:after {
+    background-color: #f44336;
+    left: 24px;
+}

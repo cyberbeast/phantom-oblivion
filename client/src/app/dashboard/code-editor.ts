@@ -1,5 +1,4 @@
 export class CodeEditor {
-	id: number;
-	description: string;
+	id: string;
 	code: string;
 }

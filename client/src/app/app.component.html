@@ -1,12 +1,25 @@
   <nav>
     <div class="nav-wrapper deep-purple" >
       <!-- <a href="#" class="brand-logo">Logo</a> -->
-      <div style="padding-left: 20px;">
+      <div style="padding-left: 20px; padding-right: 20px;">
       	<span style="font-size: 180%;">
       		<span style="font-weight: bold;">{{ title_one | uppercase }}</span><span style="font-weight: lighter;">{{ title_two | uppercase }}</span>
+      			      		<span class="right"><!-- <div class="switch">
+					<label><span class="white-text">PRODUCTION MODE</span>
+						<input type="checkbox" >
+						<span class="lever white"></span>
+					<span class="white-text">DEBUG MODE</span></label>
 
+				</div> -->
+				<input type="checkbox" id="test5" #dMode (change)="announce( dMode.checked )" />
+      <label for="test5" class="white-text">DEBUG MODE</label>
+    </span>
       	</span>
+ 
+
+
       </div>
+
     </div>
   </nav>
 

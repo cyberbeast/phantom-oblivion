@@ -1,84 +1,246 @@
 <md-tab-group *ngIf="firstrun === false">
-  <!-- <md-tab *ngFor="let tab of home_dashboard_tabs">
-    <template md-tab-label><strong>{{ tab.name }}</strong></template>
+  <md-tab>
+  	<template md-tab-label><strong>PROJECT</strong></template>
+  	<template md-tab-content>
+  		<div class="row"></div>
+  		<div class="container">
+  		<div class="row">
+  			<div class="col s12 m6 l12">
+  					<div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
+  						<div class="card-content white-text">
+  							<span style="font-weight: 900;">TOOLS</span>
+  							<div class="center">
+  								<a class="waves-effect waves-light btn white deep-purple-text" (click)="addNewFunction()"><span style="font-weight: 900;">OBLIVIATE</span></a>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+  			<!-- </div> -->
+  			<!-- <div class="row"> -->
+  				<div class="col s12 m6 l3">
+  					<div class="card large deep-purple darken-1 hoverable" style="height: inherit;">
+  						<div class="card-content white-text">
+  							<span style="font-weight: 900;">PROJECT</span><br />
+  							<span style="font-size: 300%; font-weight: 200;">{{ current_project }}</span>
+  						</div>
+  					</div>
+  				</div>
+  				<div class="col s12 m6 l7">
+  					<div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
+  						<div class="card-content white-text">
+  							<span style="font-weight: 900;">ACCESS URL</span><br />
+  							<span style="font-size: 300%; font-weight: 200;">asdf98a7sd98f7skjhd.onion</span>
+  						</div>
+  					</div>
+  				</div>
+  				<div class="col s12 m6 l5">
+  					<div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
+  						<div class="card-content white-text">
+
+  						</div>
+  					</div>
+  				</div>
+  				<div class="col s12 m6 l2">
+  					<div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
+  						<div class="card-content white-text">
+  							<span style="font-weight: 900;">TOR STATUS</span><br />
+  							<span style="font-size: 150%; font-weight: 200;">connected</span>
+  							<br />
+  							<br />
+  							<span style="font-weight: 900;">API STATUS</span><br />
+  							<span style="font-size: 150%; font-weight: 200;">online</span>
+  							<br />
+  							<br />
+  							<span style="font-weight: 900;">SERVER POOL</span><br />
+  							<span style="font-size: 150%; font-weight: 200;">{{serverPoolCount}}</span>
+                <br />
+                <br />
+                <span style="font-weight: 900;">FUNCTIONS POOL</span><br />
+                <span style="font-size: 150%; font-weight: 200;">{{functionsPoolCount}}</span>
+
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+
+
+  		</div>
+  	</template>
+  </md-tab>
+  <md-tab>
+    <template md-tab-label><strong>SERVER CONFIG</strong></template>
     <template md-tab-content>
-      <h1>{{ tab.description }}</h1>
+        <div class="container">
+          <div class="row" style="margin-bottom: 2px;">
+          <div class="col s12">
+            <div class="card-panel white" style="margin-bottom: 2px;">
+              <a class="waves-effect waves-light btn deep-purple" (click)="addNewServer()">NEW SERVER</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6 l4" *ngFor=" let server of server_cards">
+            <div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
+              <div class="card-content white-text">
+                <div class="row">
+                    
+                  <div class="input-field col s12">
+                    <input value="{{ server.server_username}}" id="username" type="text" class="validate" #ServerUsername
+                              (keyup.enter)="serverUsernameValueChange(ServerUsername.value, server._id)">
+                    <label class="active" for="username">USERNAME</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <input value="{{ server.server_password }}" id="password" type="password" class="validate" #ServerPassword
+                              (keyup.enter)="serverPasswordValueChange(ServerPassword.value, server._id)">
+                    <label class="active" for="password">PASSWORD</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <input value="{{ server.server_host }}" id="host" type="text" class="validate" #ServerHost
+                              (keyup.enter)="serverHostValueChange(ServerHost.value, server._id)">
+                    <label class="active" for="host">HOST</label>
+                  </div>
+                </div>
+                <pre *ngIf="debugToggle === true">{{server._id.$oid}}</pre>
+                <br />
+                <br />
+              </div>
+                <div class="card-action">
+              <a class="btn waves-effect waves-light btn deep-purple disabled" (click)="saveServer( server._id )" [ngClass] = "{'disabled': disableClassBool_ServerSaveButton}">SAVE</a>
+            </div>
+            </div>
+
+            <div *ngIf="saveSpinnerBool">
+                    <div  style="margin-bottom: 1px; margin-top: 5px; background: #E8EAF6;" class="progress">
+                      <div class="indeterminate deep-purple"></div>
+                    </div>
+                  </div>
+          </div>
+          </div>
+        </div>
+        </div>
     </template>
-</md-tab> -->
-<md-tab>
-	<template md-tab-label><strong>PROJECT</strong></template>
-	<template md-tab-content>
-		<md-grid-list cols="4" rowHeight="100px">
-			<md-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
-			[style.background]="tile.color">
-			{{tile.text}}
-		</md-grid-tile>
-	</md-grid-list>
-</template>
-</md-tab>
-<md-tab>
-	<template md-tab-label><strong>WEB SERVICES</strong></template>
-	<template md-tab-content>
-		<div>
-			<div class="row">
-				<div class="col s12">
-					<div class="card-panel white">
-						<a class="waves-effect waves-light btn deep-purple" (click)="addNewFunction()">NEW FUNCTION</a>
-						<a class="waves-effect waves-light btn deep-purple">COMPILE</a>
-					</div>
-				</div>
-			</div>
+  </md-tab>
+  <md-tab>
+  	<template md-tab-label><strong>WEB SERVICES</strong></template>
+  	<template md-tab-content>
+      <div>
 
-			<div class="row">
-				<div class="col s12 m6 l4" *ngFor="let count of function_cards">
-					<div class="card">
-						<div class="card-content">
-							<span class="card-title">Function {{count.id}}</span>
-							<p>{{count.description}}</p>
-							<div ace-editor 
-							[text]="count.code"
-							[mode]="'python'"
-							[theme]="'eclipse'"
-							[options]="options"
-							[readOnly]="false"
-							[autoUpdateContent]="true"
-							(textChanged)="onChange($event, count.id)"
-							style="min-height: 200px; width:auto; overflow: auto;"></div>
-						</div>
-					</div>
-				</div>
-			</div>
+  			<div class="row" style="margin-bottom: 2px;">
+  				<div class="col s12">
+  					<div class="card-panel white" style="margin-bottom: 2px;">
+  						<a class="waves-effect waves-light btn deep-purple" (click)="addNewFunction()">NEW FUNCTION</a>
+  						<a class="waves-effect waves-light btn deep-purple" (click)="compile()" [ngClass] = "{'disabled': disableClassBool_compile}">COMPILE</a>
+  					</div>
+  				</div>
+  			</div>
+  			<!-- <div *ngIf="!saveSpinnerBool">
+  				<div  style="margin-bottom: 1px; margin-top: 5px; background: #E8EAF6;" class="progress">
+        				<div class="indeterminate deep-purple"></div>
+    				</div>
+    			</div> -->
 
-		</div>
-	</template>
-</md-tab>  
+    			<div class="row">
+    				<div class="col s12 m6 l6" *ngFor="let function of function_cards">
+    					<div class="card">
+    						<div class="col s12 m5">
+    						</div>
+    						<div class="card-content">
+    							<table>
+    								<thead>
+    									<tr>
+    										<th data-field="function"><p style="font-weight: 900;">FUNCTION</p></th>
+    										<th data-field="description"><p style="font-weight: 900;">DESCRIPTION</p></th>
+    									</tr>
+    								</thead>
+
+    								<tbody>
+    									<tr>
+    										<td>
+    											<span class="card-title">
+    												<div class="input-field">
+    													<input class=" truncate card-title" style="border-bottom: 0px; margin-bottom: 0px;" type="text" value="{{function.function_name}}" #FunctionName
+    													(keyup.enter)="functionNameValueChange(FunctionName.value, function._id)" />
+    												</div>
+    											</span></td>
+    											<td><div class="input-field">
+    												<input class="card-title" style="border-bottom: 0px; margin-bottom: 0px;" type="text" value="{{function.function_description}}" #Description  (keyup.enter)="descriptionValueChange(Description.value, function._id)" />
+    											</div></td>
+    										</tr>
+
+    									</tbody>
+    								</table>
+
+    								<table>
+    									<thead>
+    										<tr>
+    											<th data-field="function"><p style="font-weight: 900;">CODE EDITOR</p></th>
+    										</tr>
+    									</thead>
+
+    									<tbody>
+    										<tr>
+    											<td>
+    												<span class="card-title">
+    													<div ace-editor 
+    													[text]="function.function_code"
+    													[mode]="'python'"
+    													[theme]="'eclipse'"
+    													[options]="options"
+    													[readOnly]="false"
+    													[autoUpdateContent]="true"
+    													(textChanged)="onChange($event, function._id)"
+    													style="min-height: 200px; width:auto; overflow: auto;"></div>
+    												</span></td>
+    											</tr>
+    										</tbody>
+    									</table>
+    									<div class="row">
+    									</div>
+
+    									<!-- <p>{{function.function_description}}</p> -->
+
+    									<a class="btn waves-effect waves-light btn deep-purple disabled" (click)="saveFunction( function._id )" [ngClass] = "{'disabled': disableClassBool}">SAVE</a>
+
+    									<pre *ngIf="debugToggle === true">{{function._id.$oid}}</pre>
+    								</div>
+    							</div>
+    							<div *ngIf="saveSpinnerBool">
+    								<div  style="margin-bottom: 1px; margin-top: 5px; background: #E8EAF6;" class="progress">
+    									<div class="indeterminate deep-purple"></div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+
+    	</div>
+    </template>
+	</md-tab>  
 </md-tab-group>
 
-<div *ngIf="firstrun === true">
-	<div class="container">
-	<div class="row"></div>
-	<div class="row"></div>
-	<div class="row"></div> 
-	<div class="row"></div>
+  	<div *ngIf="firstrun === true">
+  		<div class="container">
+  			<div class="row"></div>
+  			<div class="row"></div>
+  			<div class="row"></div> 
+  			<div class="row"></div>
 
-		<div class="row">
-			<div class="col s4 m6 offset-l3">
-				<div class="card deep-purple">
-					<div class="card-content white-text">
-						<span class="card-title">GET STARTED</span>
-						<p>Looks like this is the first time you are configuring your anonymous web services project.
-							Enter the required information to get started with a new project.</p>
-							<br />
-							<form class="col s12 white-text">
-								<div class="input-field col s12">
-									<input id="new_project" type="text" class="validate" #newProject (keyup.enter)="addProject(newProject.value)">
-									<label for="new_project">PROJECT NAME</label>
-								</div>
-							</form>
-							<p class="deep-purple-text"><br />Thats it! </p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  			<div class="row">
+  				<div class="col s4 m6 offset-l3">
+  					<div class="card deep-purple">
+  						<div class="card-content white-text">
+  							<span class="card-title">GET STARTED</span>
+  							<p>Looks like this is the first time you are configuring your anonymous web services project.
+  								Enter the required information to get started with a new project.</p>
+  								<br />
+  								<form class="col s12 white-text">
+  									<div class="input-field col s12">
+  										<input id="new_project" type="text" class="validate" #newProject (keyup.enter)="addProject(newProject.value)">
+  										<label for="new_project">PROJECT NAME</label>
+  									</div>
+  								</form>
+  								<p class="deep-purple-text"><br />Thats it! </p>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>

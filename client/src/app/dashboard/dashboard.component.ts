@@ -1,81 +1,284 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Tab } from './tab';
 import { DashComponentsService } from './dash-components.service';
 import "brace";
 import "brace/mode/python";
 import "brace/theme/eclipse";
 import { CodeEditor } from './code-editor';
+import { Function } from './function-interface';
+import { Router } from '@angular/router';
+import { Server } from './server-interface';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
-  providers:[DashComponentsService]
+	selector: 'app-dashboard',
+	templateUrl: './dashboard.component.html',
+	styleUrls: ['./dashboard.component.css']
 })
 
+
 export class DashboardComponent implements OnInit {
-  // Initialize variables
-  private home_dashboard_tabs: Tab[];
-  private firstrun: boolean;
-  private current_project: string;
-  text_editor_id: number = 0;
-  private function_cards: CodeEditor[] = [{
-  	id: 0,
-  	description: "This is the description for this function. You can edit this however you want.",
-  	code: ""
-  },
-  {
-  	id: 1,
-  	description: " This is the description for this function. You can edit this however you want. ",
-  	code: ""
-  },
-  {
-  	id: 2,
-  	description: " This is the description for this function. You can edit this however you want. ",
-  	code: ""
-  }];
+	// Initialize variables
+	private currentQuery: string = 'something';
+	private home_dashboard_tabs: Tab[];
+	private firstrun: boolean;
+	private current_project: string;
+	private code_edits: CodeEditor[] = [];
+	private function_cards: Function[];
+	private server_cards: Server[];
+	private saveSpinnerBool: boolean = false;
+	private disableClassBool: boolean = true;
+	private disableClassBool_ServerSaveButton: boolean = true;
+	private disableClassBool_compile: boolean = false;
+	debugToggle: boolean = false;
+	serverPoolCount: number = 0;
+	functionsPoolCount: number = 0;
 
-  
-  text:string = "#This is a code editor! ";
-  options:any = {maxLines: 1000, printMargin: false, highlightActiveLine: true};
+	tiles: any[] = [
+    {text: 'Two', cols: 1, rows: 4},
+    {text: 'One', cols: 3, rows: 2},
+    {text: 'Three', cols: 1, rows: 2},
+    {text: 'Four', cols: 2, rows: 2},
+  ];
 
-  onChange(code, id) {
-    console.log("new code", id);
-    this.function_cards[id].code = code;
-  }
+	options:any = {maxLines: 1000, printMargin: false, highlightActiveLine: true};
 
-  addNewFunction() {
-  	this.function_cards.push({
-  		id: 3,
-  		description: "something",
-  		code: " "
-  	});
-  }
+	constructor(
+		private router: Router,
+		private dashService: DashComponentsService) {
 
-  constructor(private dashService: DashComponentsService) {
-  	
-  }
+	}
 
-  ngOnInit() {
-  	this.dashService.getFirstRunStatus().subscribe(
-  			status => {
-  				this.firstrun = status;
-  				console.log("Received first run status...");
-  			});
+	compile(){
+		this.dashService.compile().subscribe(status => {
+			if (status == "success"){
+				this.disableClassBool_compile = true;
+			}
+		});
+	}
 
-    this.dashService.getTabs().subscribe(tabs => {
-  		this.home_dashboard_tabs = tabs;
-  		// console.log("Received tabs...");
-  	});
-  }
+	descriptionValueChange(newDescription, id) {
+		// console.log(newDescription);
+		this.disableClassBool = false;
 
-  addProject(value: string) {  
-  	if (value) {
-  		var project = {value}
-  		this.dashService.addProjects(project).subscribe(
-  			msg => {
-  				this.current_project = msg.name;
-  			})
-  	}
-  }
+		for ( var i = 0; i < this.function_cards.length; i++){
+			if (this.function_cards[i]._id["$oid"] == id["$oid"]){
+				this.function_cards[i].function_description = newDescription;
+			}
+		}
+	}
+
+	functionNameValueChange(newName, id) {
+		// console.log(newName);
+		this.disableClassBool = false;
+		for ( var i = 0; i < this.function_cards.length; i++){
+			if (this.function_cards[i]._id["$oid"] == id["$oid"]){
+				this.function_cards[i].function_name = newName;
+			}
+		}
+	}
+
+	serverUsernameValueChange(newUserName, id) {
+		this.disableClassBool_ServerSaveButton = false;
+		for (var i = 0; i < this.server_cards.length; i++){
+			if (this.server_cards[i]._id["$oid"] == id["$oid"]){
+				this.server_cards[i].server_username = newUserName;
+			}
+		}
+	}
+
+	serverPasswordValueChange(newPassword, id) {
+		this.disableClassBool_ServerSaveButton = false;
+		for (var i = 0; i < this.server_cards.length; i++){
+			if (this.server_cards[i]._id["$oid"] == id["$oid"]){
+				this.server_cards[i].server_password = newPassword;
+			}
+		}
+	}
+
+	serverHostValueChange(newHost, id) {
+		this.disableClassBool_ServerSaveButton = false;
+		for (var i = 0; i < this.server_cards.length; i++){
+			if (this.server_cards[i]._id["$oid"] == id["$oid"]){
+				this.server_cards[i].server_host = newHost;
+			}
+		}
+	}
+
+	onChange(code, id) {
+		// console.log("new code", JSON.stringify(code));
+		// console.log(id["$oid"]);
+		this.disableClassBool = false;
+		if (this.code_edits.length == 0){
+			this.code_edits.push({id: id["$oid"], code:code});
+		}
+		else {
+			for ( var i = 0; i < this.code_edits.length; i++){
+				if (this.code_edits[i].id == id["$oid"]){
+					this.code_edits[i].code = code;
+				}
+			}
+		}
+	}
+
+	saveFunction(id){
+		console.log("SAVE REQUEST FOR: " + JSON.stringify(id));
+		var selectedObject: any;
+		if (!this.disableClassBool){
+			this.saveSpinnerBool = true;
+		}
+
+		for (var i = 0; i < this.code_edits.length; i++){
+			console.log(this.code_edits[i].id);
+			// console.log(id["$oid"]);
+			if (this.code_edits[i].id == id["$oid"]){
+				console.log("CHANGING FOR: " + this.code_edits[i].id);
+				console.log("CHANGING VALUES IN func_cards for index: " + i);
+				console.log("This is the code body: " + this.code_edits[i].code);
+				
+				for (var j = 0; j < this.function_cards.length; j++){
+					if (this.function_cards[j]._id["$oid"] == id["$oid"]){
+						this.function_cards[j].function_code = this.code_edits[i].code;
+						selectedObject = this.function_cards[j];
+					}
+				}
+				// selectedObject = this.function_cards[i];
+			}
+		}
+
+
+		this.dashService.saveFunction(selectedObject).subscribe(status => {
+			console.log(status);
+			if (status == 0){
+				this.disableClassBool = true;
+				this.saveSpinnerBool = false;
+				this.disableClassBool_compile = false;
+
+				this.getFunctions();
+			}
+		});
+
+	}
+
+	saveServer(id){
+		var selectedObject: any;
+
+		if (!this.disableClassBool){
+			this.saveSpinnerBool = true;
+		}
+
+		for (var i = 0; i < this.server_cards.length; i++){
+			if (this.server_cards[i]._id["$oid"] == id["$oid"]){
+				selectedObject = this.server_cards[i];
+			}
+		}
+
+		this.dashService.saveServer(selectedObject).subscribe(status => {
+			console.log(status);
+			if (status == 0){
+				this.disableClassBool_ServerSaveButton = true;
+				this.saveSpinnerBool = false;
+
+				this.getServers();
+			}
+		});
+	}
+
+	addNewFunction() {
+		var newObject = {
+			_id: { $oid: "__new"},
+			function_name: "",
+			function_description: "",			
+			function_code: "",
+			request_method: "GET"
+		}
+
+		// this.disableClassBool = true;
+		// this.saveSpinnerBool = true;
+
+		this.dashService.saveNewFunction(newObject).subscribe(res_object => {
+			console.log(JSON.stringify(res_object));
+			this.function_cards.push(res_object);
+			this.disableClassBool_compile = false;
+
+		});
+	}
+
+	addNewServer() {
+		var newObject = {
+			_id: { $oid: "__new"},
+			server_host: "",
+			server_username: "",
+			server_password: ""
+		}
+
+		this.dashService.saveNewServer(newObject).subscribe(res_object => {
+			console.log(JSON.stringify(res_object));
+			this.server_cards.push(res_object);
+		})
+
+	}
+
+
+	firstRun(): void {
+		this.dashService.getFirstRunStatus().subscribe(
+			status => {
+				if (status == '1'){
+					this.firstrun = true;
+				}
+				else {
+					this.firstrun = false;
+					this.current_project = status;
+				}
+				
+				console.log("Received first run status...");
+			});	
+	}
+
+	getFunctions(): void {
+		this.dashService.getFunctions().subscribe(functions => {
+			this.function_cards = functions;
+			this.functionsPoolCount = functions.length;
+			console.log(JSON.stringify(functions));
+		});
+	}
+
+	getServers(): void {
+		this.dashService.getServers().subscribe(servers => {
+			this.server_cards = servers;
+			this.serverPoolCount = servers.length;
+			console.log(JSON.stringify(servers));
+		});
+	}
+
+	ngOnInit() {
+		this.firstRun();
+		
+		this.dashService.modeAnnounced$.subscribe(state => {
+			this.debugToggle = state;
+		});
+
+		this.dashService.getTabs().subscribe(tabs => {
+			this.home_dashboard_tabs = tabs;
+			// console.log("Received tabs...");
+		});
+
+		this.getFunctions();
+
+		this.getServers();
+	}
+
+	refreshPage(): void {
+		this.router.navigate(['/']);
+	}
+
+	addProject(value: string) {  
+		if (value) {
+			var project = {value}
+			this.dashService.addProjects(project).subscribe(
+				msg => {
+					this.current_project = msg.name;
+				})
+			this.firstRun();
+		}
+	}
 }
