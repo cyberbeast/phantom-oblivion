@@ -10,14 +10,15 @@
   						<div class="card-content white-text">
   							<span style="font-weight: 900;">TOOLS</span>
   							<div class="center">
-  								<a class="waves-effect waves-light btn white deep-purple-text" (click)="addNewFunction()"><span style="font-weight: 900;">OBLIVIATE</span></a>
+  								<a class="waves-effect waves-light btn white deep-purple-text" (click)="pressOb()" [ngClass] = "{'disabled': disableClassBool_obliviateButton}"><span style="font-weight: 900;">OBLIVIATE</span></a>
+                  <a class="waves-effect waves-light btn white deep-purple-text" (click)="stopObliviate()" [ngClass] = "{'disabled': !disableClassBool_obliviateButton}"><span style="font-weight: 900;">HALT</span></a>
   							</div>
   						</div>
   					</div>
   				</div>
   			<!-- </div> -->
   			<!-- <div class="row"> -->
-  				<div class="col s12 m6 l3">
+  				<div class="col s12 m6 l4">
   					<div class="card large deep-purple darken-1 hoverable" style="height: inherit;">
   						<div class="card-content white-text">
   							<span style="font-weight: 900;">PROJECT</span><br />
@@ -25,42 +26,73 @@
   						</div>
   					</div>
   				</div>
-  				<div class="col s12 m6 l7">
+  				<div class="col s12 m6 l8">
   					<div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
   						<div class="card-content white-text">
   							<span style="font-weight: 900;">ACCESS URL</span><br />
-  							<span style="font-size: 300%; font-weight: 200;">asdf98a7sd98f7skjhd.onion</span>
+  							<span style="font-size: 300%; font-weight: 200;">{{ access_url }}</span>
   						</div>
   					</div>
+            <div *ngIf="obliviateSpinnerBool">
+                    <div  style="margin-bottom: 1px; margin-top: 5px; background: #E8EAF6;" class="progress">
+                      <div class="indeterminate deep-purple"></div>
+                    </div>
+                  </div>
   				</div>
-  				<div class="col s12 m6 l5">
+  				<!-- <div class="col s12 m6 l5">
   					<div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
   						<div class="card-content white-text">
 
   						</div>
   					</div>
-  				</div>
-  				<div class="col s12 m6 l2">
+  				</div> -->
+  				<div class="col s12 m6 l3">
   					<div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
   						<div class="card-content white-text">
   							<span style="font-weight: 900;">TOR STATUS</span><br />
-  							<span style="font-size: 150%; font-weight: 200;">connected</span>
-  							<br />
-  							<br />
-  							<span style="font-weight: 900;">API STATUS</span><br />
-  							<span style="font-size: 150%; font-weight: 200;">online</span>
-  							<br />
-  							<br />
-  							<span style="font-weight: 900;">SERVER POOL</span><br />
-  							<span style="font-size: 150%; font-weight: 200;">{{serverPoolCount}}</span>
-                <br />
-                <br />
+  							<span style="font-size: 150%; font-weight: 200;">{{ tor_status }}</span>
+              </div>
+            </div>
+            <div *ngIf="obliviateSpinnerBool">
+                    <div  style="margin-bottom: 1px; margin-top: 5px; background: #E8EAF6;" class="progress">
+                      <div class="indeterminate deep-purple"></div>
+                    </div>
+                  </div>
+  				</div>
+          <div class="col s12 m6 l3">
+            <div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
+              <div class="card-content white-text">
+                 <span style="font-weight: 900;">API STATUS</span><br />
+                <span style="font-size: 150%; font-weight: 200;">{{ api_status }}</span>
+              </div>
+            </div>
+            <div *ngIf="obliviateSpinnerBool">
+                    <div  style="margin-bottom: 1px; margin-top: 5px; background: #E8EAF6;" class="progress">
+                      <div class="indeterminate deep-purple"></div>
+                    </div>
+                  </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
+              <div class="card-content white-text">
+                 <span style="font-weight: 900;">SERVER POOL</span><br />
+                <span style="font-size: 150%; font-weight: 200;">{{serverPoolCount}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card small deep-purple darken-1 hoverable" style="height: inherit;">
+              <div class="card-content white-text">
                 <span style="font-weight: 900;">FUNCTIONS POOL</span><br />
                 <span style="font-size: 150%; font-weight: 200;">{{functionsPoolCount}}</span>
+              </div>
+            </div>
+          </div>
+                
+               
+               
+                
 
-  						</div>
-  					</div>
-  				</div>
   			</div>
 
 

@@ -10,6 +10,7 @@ import { Tab } from './tab';
 import { Project } from './project-interface';
 import { Function } from './function-interface';
 import { Server } from './server-interface';
+import { Obliviate } from './obliviate-interface';
 
 import { Subject } from 'rxjs/Subject';
 
@@ -87,4 +88,14 @@ export class DashComponentsService {
 						.map(res => res.json());
 	}
 
+	Obliviate(body: Object): Observable<Obliviate> {
+		
+		return this.http.post(this.vm_management_url + "obliviate", JSON.stringify(body))
+						.map(res =>  res.json());
+	}
+
+	stopObliviate(body: Object): Observable<string> {
+		return this.http.post(this.vm_management_url + "stop_obliviate", JSON.stringify(body))
+						.map(res =>  res.json());
+	}
 }

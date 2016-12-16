@@ -11,6 +11,7 @@ import { DashComponentsService } from './dashboard/dash-components.service';
 import { AceEditorComponent } from 'ng2-ace-editor';
 import { AceEditorDirective } from 'ng2-ace-editor';
 import { MaterializeModule } from 'angular2-materialize';
+import { SimpleTimer } from 'ng2-simple-timer';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { MaterializeModule } from 'angular2-materialize';
       }
     ])
   ],
-  providers: [DashComponentsService],
+  providers: [DashComponentsService, SimpleTimer],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -27,6 +27,7 @@
     "jquery": "^2.2.4",
     "materialize-css": "^0.97.8",
     "ng2-ace": "0.0.15",
+    "ng2-simple-timer": "^1.2.5",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"
