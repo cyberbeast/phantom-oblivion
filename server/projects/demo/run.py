@@ -1,10 +1,9 @@
 import hug 
 
 @hug.get('/func1') 
-def func1(num1):
-    output = num1 + num1
-    return output
+def func1():
+    return "hi"
 
-@hug.get('/new_func') 
-def hi():
-    return 0
+@hug.get('/func2') 
+def func2():
+    return "works"

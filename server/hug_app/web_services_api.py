@@ -66,18 +66,18 @@ def compile():
 	cwd = os.getcwd()
 
 	dependencies_directory = os.path.join(cwd, "compile_dependencies")
-	tor_dependency_file = os.path.join(dependencies_directory, "tor.py")
+	bash_dependency = os.path.join(dependencies_directory, "script.sh")
 	
 	project_directory = os.path.join(cwd, "projects")
 	project_name = os.listdir(project_directory)[0]
 	project_path = os.path.join(project_directory, project_name)
-	print(project_path)
+	# print(project_path)
 
 	writeFile = open(os.path.join(project_path,'run.py'), 'w+')
 
 	import_content = "import hug \n"
 
-	print(import_content)
+	# print(import_content)
 	writeFile.write(import_content)
 
 	for function in functions.find():
@@ -90,14 +90,14 @@ def compile():
 		
 		if not doNotCompile:
 			writeFile.write("\n")
-			print(hug_decorator_content)
+			# print(hug_decorator_content)
 			writeFile.write(hug_decorator_content)
-			print(hug_code_content)
+			# print(hug_code_content)
 			writeFile.write(hug_code_content)
 			writeFile.write("\n")
 
 			# Clone a copy of the tor python script
-			shutil.copy2(tor_dependency_file, project_path)
+			shutil.copy2(bash_dependency, project_path)
 		else:
 			print("Compile Error - Malformed Function")
 

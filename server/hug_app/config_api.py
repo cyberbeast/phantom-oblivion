@@ -15,6 +15,10 @@ functions = functions_db.functions
 servers_db = client.servers_db
 servers = servers_db.servers
 
+conf_db = client.conf_db
+tor_config = conf_db.tor_config
+threshold_config = conf_db.threshold_config
+
 def cors_support(response, *args, **kwargs):
     response.set_header('Access-Control-Allow-Origin', '*')
     response.set_header('Access-Control-Allow-Headers', '*')
@@ -45,18 +49,29 @@ def new_project(body):
 		os.makedirs('projects' + os.sep + content['value'])
 
 	insert_Function_object = {
-		"function_name" : " ",
-		"function_description" : " ",
-		"function_code" : " ",
+		"function_name" : "",
+		"function_description" : "",
+		"function_code" : "",
 		"request_method" : "GET"
 	}
 	inserted_Function_id_res = functions.insert_one(insert_Function_object).inserted_id
 
 	insert_Server_object = {
-		"server_host" : " ",
-		"server_username" : " ",
-		"server_password" : " "
+		"server_host" : "",
+		"server_username" : "",
+		"server_password" : ""
 	}
-	inserted_Server_id_res = functions.insert_one(insert_Server_object).inserted_id
+	inserted_Server_id_res = servers.insert_one(insert_Server_object).inserted_id
+	tor_config.update({ 'name': 'access_url'}, {'name': "access_url", "value": "unassigned"}, upsert=True)
+
+	threshold_config.update( 
+        { 'name': 'timer'}, 
+        {
+        	'name': 'timer',
+            "value": 120
+            } , upsert=True
+    )
+
+	tor_config.update({'name':'obliviate_status'}, {'name':'obliviate_status', 'status':'PAUSE'}, upsert=True)
 
 	return {'name':content['value']}
